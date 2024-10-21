@@ -35,10 +35,13 @@ func NewChart(scope constructs.Construct, id string, ns string, appLabel string)
 							ContainerPort: jsii.Number(80),
 						}},
 					}},
+					ServiceAccountName: jsii.String("service-account"),
 				},
 			},
 		},
 	})
+
+	k8s.NewKubeServiceAccount(chart, jsii.String("service-account"), nil)
 
 	return chart
 }
