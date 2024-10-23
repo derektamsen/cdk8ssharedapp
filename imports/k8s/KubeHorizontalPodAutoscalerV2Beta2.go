@@ -2,11 +2,11 @@ package k8s
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
+	_init_ "github.com/derektamsen/cdk8ssharedapp/imports/k8s/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
-	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
+	"github.com/derektamsen/cdk8ssharedapp/imports/k8s/internal"
 )
 
 // HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.

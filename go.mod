@@ -1,4 +1,4 @@
-module github.com/derektamsen/cdk8s-shared-app
+module github.com/derektamsen/cdk8ssharedapp
 
 go 1.22.0
 

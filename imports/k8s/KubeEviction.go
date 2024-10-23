@@ -2,11 +2,11 @@ package k8s
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
+	_init_ "github.com/derektamsen/cdk8ssharedapp/imports/k8s/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
-	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
+	"github.com/derektamsen/cdk8ssharedapp/imports/k8s/internal"
 )
 
 // Eviction evicts a pod from its node subject to certain policies and safety constraints.
