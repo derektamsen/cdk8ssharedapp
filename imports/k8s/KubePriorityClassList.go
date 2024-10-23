@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // PriorityClassList is a collection of priority classes.
@@ -121,7 +121,6 @@ func (j *jsiiProxy_KubePriorityClassList) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.scheduling.v1.PriorityClassList" API object.
 func NewKubePriorityClassList(scope constructs.Construct, id *string, props *KubePriorityClassListProps) KubePriorityClassList {
@@ -314,4 +313,3 @@ func (k *jsiiProxy_KubePriorityClassList) ToString() *string {
 
 	return returns
 }
-

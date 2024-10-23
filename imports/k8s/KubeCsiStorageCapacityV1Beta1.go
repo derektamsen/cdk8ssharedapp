@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // CSIStorageCapacity stores the result of one CSI GetCapacity call.
@@ -131,7 +131,6 @@ func (j *jsiiProxy_KubeCsiStorageCapacityV1Beta1) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.storage.v1beta1.CSIStorageCapacity" API object.
 func NewKubeCsiStorageCapacityV1Beta1(scope constructs.Construct, id *string, props *KubeCsiStorageCapacityV1Beta1Props) KubeCsiStorageCapacityV1Beta1 {
@@ -324,4 +323,3 @@ func (k *jsiiProxy_KubeCsiStorageCapacityV1Beta1) ToString() *string {
 
 	return returns
 }
-

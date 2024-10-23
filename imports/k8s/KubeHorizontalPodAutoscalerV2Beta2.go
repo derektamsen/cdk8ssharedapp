@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.
@@ -121,7 +121,6 @@ func (j *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscaler" API object.
 func NewKubeHorizontalPodAutoscalerV2Beta2(scope constructs.Construct, id *string, props *KubeHorizontalPodAutoscalerV2Beta2Props) KubeHorizontalPodAutoscalerV2Beta2 {
@@ -314,4 +313,3 @@ func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) ToString() *string {
 
 	return returns
 }
-

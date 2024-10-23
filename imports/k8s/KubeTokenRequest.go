@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // TokenRequest requests a token for a given service account.
@@ -121,7 +121,6 @@ func (j *jsiiProxy_KubeTokenRequest) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.authentication.v1.TokenRequest" API object.
 func NewKubeTokenRequest(scope constructs.Construct, id *string, props *KubeTokenRequestProps) KubeTokenRequest {
@@ -314,4 +313,3 @@ func (k *jsiiProxy_KubeTokenRequest) ToString() *string {
 
 	return returns
 }
-

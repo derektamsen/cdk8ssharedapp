@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // CertificateSigningRequest objects provide a mechanism to obtain x509 certificates by submitting a certificate signing request, and having it asynchronously approved and issued.
@@ -127,7 +127,6 @@ func (j *jsiiProxy_KubeCertificateSigningRequest) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.certificates.v1.CertificateSigningRequest" API object.
 func NewKubeCertificateSigningRequest(scope constructs.Construct, id *string, props *KubeCertificateSigningRequestProps) KubeCertificateSigningRequest {
@@ -320,4 +319,3 @@ func (k *jsiiProxy_KubeCertificateSigningRequest) ToString() *string {
 
 	return returns
 }
-

@@ -1,8 +1,8 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 )
 
 type Quantity interface {
@@ -23,7 +23,6 @@ func (j *jsiiProxy_Quantity) Value() interface{} {
 	)
 	return returns
 }
-
 
 func Quantity_FromNumber(value *float64) Quantity {
 	_init_.Initialize()
@@ -60,4 +59,3 @@ func Quantity_FromString(value *string) Quantity {
 
 	return returns
 }
-

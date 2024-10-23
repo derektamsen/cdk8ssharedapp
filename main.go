@@ -1,10 +1,10 @@
 package main
 
 import (
-	"example.com/cdk8s/imports/k8s"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s"
 )
 
 // type ClusterProps struct {

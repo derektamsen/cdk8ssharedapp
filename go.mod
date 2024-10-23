@@ -1,4 +1,4 @@
-module example.com/cdk8s
+module github.com/derektamsen/cdk8s-shared-app
 
 go 1.22.0
 

@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace.
@@ -123,7 +123,6 @@ func (j *jsiiProxy_KubeLocalSubjectAccessReview) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.authorization.v1.LocalSubjectAccessReview" API object.
 func NewKubeLocalSubjectAccessReview(scope constructs.Construct, id *string, props *KubeLocalSubjectAccessReviewProps) KubeLocalSubjectAccessReview {
@@ -316,4 +315,3 @@ func (k *jsiiProxy_KubeLocalSubjectAccessReview) ToString() *string {
 
 	return returns
 }
-

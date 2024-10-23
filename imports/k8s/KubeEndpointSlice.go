@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // EndpointSlice represents a subset of the endpoints that implement a service.
@@ -123,7 +123,6 @@ func (j *jsiiProxy_KubeEndpointSlice) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.discovery.v1.EndpointSlice" API object.
 func NewKubeEndpointSlice(scope constructs.Construct, id *string, props *KubeEndpointSliceProps) KubeEndpointSlice {
@@ -316,4 +315,3 @@ func (k *jsiiProxy_KubeEndpointSlice) ToString() *string {
 
 	return returns
 }
-

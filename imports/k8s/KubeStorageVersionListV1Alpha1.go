@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // A list of StorageVersions.
@@ -121,7 +121,6 @@ func (j *jsiiProxy_KubeStorageVersionListV1Alpha1) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList" API object.
 func NewKubeStorageVersionListV1Alpha1(scope constructs.Construct, id *string, props *KubeStorageVersionListV1Alpha1Props) KubeStorageVersionListV1Alpha1 {
@@ -314,4 +313,3 @@ func (k *jsiiProxy_KubeStorageVersionListV1Alpha1) ToString() *string {
 
 	return returns
 }
-

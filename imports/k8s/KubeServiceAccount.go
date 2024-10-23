@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets.
@@ -121,7 +121,6 @@ func (j *jsiiProxy_KubeServiceAccount) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.core.v1.ServiceAccount" API object.
 func NewKubeServiceAccount(scope constructs.Construct, id *string, props *KubeServiceAccountProps) KubeServiceAccount {
@@ -314,4 +313,3 @@ func (k *jsiiProxy_KubeServiceAccount) ToString() *string {
 
 	return returns
 }
-

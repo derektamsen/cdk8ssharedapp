@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // CustomResourceDefinition represents a resource that should be exposed on the API server.
@@ -123,7 +123,6 @@ func (j *jsiiProxy_KubeCustomResourceDefinition) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition" API object.
 func NewKubeCustomResourceDefinition(scope constructs.Construct, id *string, props *KubeCustomResourceDefinitionProps) KubeCustomResourceDefinition {
@@ -316,4 +315,3 @@ func (k *jsiiProxy_KubeCustomResourceDefinition) ToString() *string {
 
 	return returns
 }
-

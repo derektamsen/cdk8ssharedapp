@@ -1,26 +1,28 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // Endpoints is a collection of endpoints that implement the actual service. Example:.
 //
 // Name: "mysvc",
 // Subsets: [
-//  {
-//    Addresses: [{"ip": "10.10.1.1"}, {"ip": "10.10.2.2"}],
-//    Ports: [{"name": "a", "port": 8675}, {"name": "b", "port": 309}]
-//  },
-//  {
-//    Addresses: [{"ip": "10.10.3.3"}],
-//    Ports: [{"name": "a", "port": 93}, {"name": "b", "port": 76}]
-//  },
+//
+//	{
+//	  Addresses: [{"ip": "10.10.1.1"}, {"ip": "10.10.2.2"}],
+//	  Ports: [{"name": "a", "port": 8675}, {"name": "b", "port": 309}]
+//	},
+//	{
+//	  Addresses: [{"ip": "10.10.3.3"}],
+//	  Ports: [{"name": "a", "port": 93}, {"name": "b", "port": 76}]
+//	},
+//
 // ].
 type KubeEndpoints interface {
 	cdk8s.ApiObject
@@ -133,7 +135,6 @@ func (j *jsiiProxy_KubeEndpoints) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.core.v1.Endpoints" API object.
 func NewKubeEndpoints(scope constructs.Construct, id *string, props *KubeEndpointsProps) KubeEndpoints {
@@ -326,4 +327,3 @@ func (k *jsiiProxy_KubeEndpoints) ToString() *string {
 
 	return returns
 }
-

@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
@@ -121,7 +121,6 @@ func (j *jsiiProxy_KubeService) Node() constructs.Node {
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.core.v1.Service" API object.
 func NewKubeService(scope constructs.Construct, id *string, props *KubeServiceProps) KubeService {
@@ -314,4 +313,3 @@ func (k *jsiiProxy_KubeService) ToString() *string {
 
 	return returns
 }
-

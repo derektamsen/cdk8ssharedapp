@@ -1,12 +1,12 @@
 package k8s
 
 import (
-	_init_ "example.com/cdk8s/imports/k8s/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/derektamsen/cdk8s-shared-app/imports/k8s/jsii"
 
-	"example.com/cdk8s/imports/k8s/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
+	"github.com/derektamsen/cdk8s-shared-app/imports/k8s/internal"
 )
 
 // PriorityLevelConfigurationList is a list of PriorityLevelConfiguration objects.
@@ -121,7 +121,6 @@ func (j *jsiiProxy_KubePriorityLevelConfigurationListV1Beta1) Node() constructs.
 	)
 	return returns
 }
-
 
 // Defines a "io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationList" API object.
 func NewKubePriorityLevelConfigurationListV1Beta1(scope constructs.Construct, id *string, props *KubePriorityLevelConfigurationListV1Beta1Props) KubePriorityLevelConfigurationListV1Beta1 {
@@ -314,4 +313,3 @@ func (k *jsiiProxy_KubePriorityLevelConfigurationListV1Beta1) ToString() *string
 
 	return returns
 }
-
