@@ -7,6 +7,30 @@ import (
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
 )
 
+// type ClusterProps struct {
+// 	ClusterName string
+// }
+
+// type K8sClusters struct {
+// 	Clusters map[string]*ClusterProps
+// }
+
+func NewApp() error {
+	appProps := &cdk8s.AppProps{
+		Outdir:              jsii.String("dist/cluster"),
+		OutputFileExtension: jsii.String(".yaml"),
+		YamlOutputType:      cdk8s.YamlOutputType_FOLDER_PER_CHART_FILE_PER_RESOURCE,
+	}
+
+	app := cdk8s.NewApp(appProps)
+
+	NewChart(app, "exemplar", "my-app", "my-app")
+
+	app.Synth()
+
+	return nil
+}
+
 func NewChart(scope constructs.Construct, id string, ns string, appLabel string) cdk8s.Chart {
 
 	chart := cdk8s.NewChart(scope, jsii.String(id), &cdk8s.ChartProps{
@@ -47,15 +71,5 @@ func NewChart(scope constructs.Construct, id string, ns string, appLabel string)
 }
 
 func main() {
-	appProps := &cdk8s.AppProps{
-		Outdir:              jsii.String("dist/cluster"),
-		OutputFileExtension: jsii.String(".yaml"),
-		YamlOutputType:      cdk8s.YamlOutputType_FOLDER_PER_CHART_FILE_PER_RESOURCE,
-	}
-
-	app := cdk8s.NewApp(appProps)
-
-	NewChart(app, "exemplar", "my-app", "my-app")
-
-	app.Synth()
+	NewApp()
 }
