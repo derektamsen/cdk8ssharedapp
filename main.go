@@ -1,4 +1,4 @@
-package main
+package cdk8ssharedapp
 
 import (
 	"github.com/aws/constructs-go/constructs/v10"
@@ -68,8 +68,4 @@ func NewChart(scope constructs.Construct, id string, ns string, appLabel string)
 	k8s.NewKubeServiceAccount(chart, jsii.String("service-account"), nil)
 
 	return chart
-}
-
-func main() {
-	NewApp()
 }
