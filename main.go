@@ -1,21 +1,25 @@
 package cdk8ssharedapp
 
 import (
+	"fmt"
+
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
 	"github.com/derektamsen/cdk8ssharedapp/imports/k8s"
 )
 
-// type ClusterProps struct {
-// 	ClusterName string
-// }
+type ClusterProps struct {
+	ClusterName string
+}
 
-// type K8sClusters struct {
-// 	Clusters map[string]*ClusterProps
-// }
+type K8sClusters struct {
+	Clusters *[]ClusterProps
+}
 
-func NewApp() error {
+func NewApp(clusters *K8sClusters) error {
+	fmt.Printf("%v", clusters)
+
 	appProps := &cdk8s.AppProps{
 		Outdir:              jsii.String("dist/cluster"),
 		OutputFileExtension: jsii.String(".yaml"),
