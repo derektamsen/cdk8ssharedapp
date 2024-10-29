@@ -18,7 +18,7 @@ type K8sClusters struct {
 }
 
 func NewApp(clusters *K8sClusters) error {
-	fmt.Printf("%v", clusters)
+	fmt.Printf("%+v", &clusters)
 
 	appProps := &cdk8s.AppProps{
 		Outdir:              jsii.String("dist/cluster"),
