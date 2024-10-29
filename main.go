@@ -19,7 +19,7 @@ type K8sClusters struct {
 
 func NewApp(clusters *K8sClusters) error {
 	for _, v := range *clusters.Clusters {
-		fmt.Printf("Generating manifests for %s", v.ClusterName)
+		fmt.Printf("Generating manifests for %s\n", v.ClusterName)
 		appProps := &cdk8s.AppProps{
 			Outdir:              jsii.String(fmt.Sprintf("dist/%s", v.ClusterName)),
 			OutputFileExtension: jsii.String(".yaml"),
