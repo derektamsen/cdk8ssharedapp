@@ -11,6 +11,7 @@ import (
 
 type ClusterProps struct {
 	ClusterName string
+	Image       string
 }
 
 type K8sClusters struct {
@@ -28,7 +29,7 @@ func NewApp(clusters *K8sClusters) error {
 
 		app := cdk8s.NewApp(appProps)
 
-		NewChart(app, "exemplar", "my-app", "my-app")
+		NewChart(app, "exemplar", "my-app", "my-app", v.Image)
 
 		app.Synth()
 	}
@@ -36,7 +37,7 @@ func NewApp(clusters *K8sClusters) error {
 	return nil
 }
 
-func NewChart(scope constructs.Construct, id string, ns string, appLabel string) cdk8s.Chart {
+func NewChart(scope constructs.Construct, id string, ns string, appLabel string, image string) cdk8s.Chart {
 
 	chart := cdk8s.NewChart(scope, jsii.String(id), &cdk8s.ChartProps{
 		Namespace: jsii.String(ns),
@@ -59,7 +60,7 @@ func NewChart(scope constructs.Construct, id string, ns string, appLabel string)
 				Spec: &k8s.PodSpec{
 					Containers: &[]*k8s.Container{{
 						Name:  jsii.String("app-container"),
-						Image: jsii.String("nginx:1.19.10"),
+						Image: jsii.String(image),
 						Ports: &[]*k8s.ContainerPort{{
 							ContainerPort: jsii.Number(80),
 						}},
