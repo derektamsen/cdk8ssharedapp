@@ -9,6 +9,11 @@ import (
 	"github.com/derektamsen/cdk8ssharedapp/imports/k8s"
 )
 
+type AppConfig struct {
+	Name      string
+	Namespace string
+}
+
 type ClusterProps struct {
 	ClusterName string
 	Image       string
@@ -18,7 +23,7 @@ type K8sClusters struct {
 	Clusters *[]ClusterProps
 }
 
-func NewApp(clusters *K8sClusters) error {
+func NewApp(appConfig *AppConfig, clusters *K8sClusters) error {
 	for _, v := range *clusters.Clusters {
 		fmt.Printf("Generating manifests for %s\n", v.ClusterName)
 		appProps := &cdk8s.AppProps{
@@ -29,7 +34,7 @@ func NewApp(clusters *K8sClusters) error {
 
 		app := cdk8s.NewApp(appProps)
 
-		NewChart(app, "exemplar", "my-app", "my-app", v.Image)
+		NewChart(app, appConfig.Name, appConfig.Namespace, appConfig.Name, v.Image)
 
 		app.Synth()
 	}
