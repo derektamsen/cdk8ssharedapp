@@ -23,7 +23,7 @@ type StatusDetails struct {
 	RetryAfterSeconds *float64 `field:"optional" json:"retryAfterSeconds" yaml:"retryAfterSeconds"`
 	// UID of the resource.
 	//
-	// (when there is a single resource which can be described). More info: http://kubernetes.io/docs/user-guide/identifiers#uids
+	// (when there is a single resource which can be described). More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
 	Uid *string `field:"optional" json:"uid" yaml:"uid"`
 }
 

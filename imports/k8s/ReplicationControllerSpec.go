@@ -21,7 +21,7 @@ type ReplicationControllerSpec struct {
 	Selector *map[string]*string `field:"optional" json:"selector" yaml:"selector"`
 	// Template is the object that describes the pod that will be created if insufficient replicas are detected.
 	//
-	// This takes precedence over a TemplateRef. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
+	// This takes precedence over a TemplateRef. The only allowed template.spec.restartPolicy value is "Always". More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
 	Template *PodTemplateSpec `field:"optional" json:"template" yaml:"template"`
 }
 

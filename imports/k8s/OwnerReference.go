@@ -13,11 +13,11 @@ type OwnerReference struct {
 	Kind *string `field:"required" json:"kind" yaml:"kind"`
 	// Name of the referent.
 	//
-	// More info: http://kubernetes.io/docs/user-guide/identifiers#names
+	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
 	Name *string `field:"required" json:"name" yaml:"name"`
 	// UID of the referent.
 	//
-	// More info: http://kubernetes.io/docs/user-guide/identifiers#uids
+	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
 	Uid *string `field:"required" json:"uid" yaml:"uid"`
 	// If true, AND if the owner has the "foregroundDeletion" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed.
 	//

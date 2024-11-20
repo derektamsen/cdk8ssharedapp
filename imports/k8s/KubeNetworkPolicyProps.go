@@ -7,7 +7,7 @@ type KubeNetworkPolicyProps struct {
 	//
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	Metadata *ObjectMeta `field:"optional" json:"metadata" yaml:"metadata"`
-	// Specification of the desired behavior for this NetworkPolicy.
+	// spec represents the specification of the desired behavior for this NetworkPolicy.
 	Spec *NetworkPolicySpec `field:"optional" json:"spec" yaml:"spec"`
 }
 

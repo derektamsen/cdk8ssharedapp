@@ -5,7 +5,7 @@ package k8s
 //
 // Kubernetes attach detach controller uses this object to determine whether attach is required. Kubelet uses this object to determine whether pod information needs to be passed on mount. CSIDriver objects are non-namespaced.
 type KubeCsiDriverProps struct {
-	// Specification of the CSI Driver.
+	// spec represents the specification of the CSI Driver.
 	Spec *CsiDriverSpec `field:"required" json:"spec" yaml:"spec"`
 	// Standard object metadata.
 	//

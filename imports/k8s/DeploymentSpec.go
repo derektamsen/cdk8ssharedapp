@@ -8,6 +8,8 @@ type DeploymentSpec struct {
 	// Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment. It must match the pod template's labels.
 	Selector *LabelSelector `field:"required" json:"selector" yaml:"selector"`
 	// Template describes the pods that will be created.
+	//
+	// The only allowed template.spec.restartPolicy value is "Always".
 	Template *PodTemplateSpec `field:"required" json:"template" yaml:"template"`
 	// Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available.
 	//

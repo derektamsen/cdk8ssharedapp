@@ -9,7 +9,7 @@ type VolumeAttachmentSource struct {
 	//
 	// This field is populated only for the CSIMigration feature. It contains translated fields from a pod's inline VolumeSource to a PersistentVolumeSpec. This field is beta-level and is only honored by servers that enabled the CSIMigration feature.
 	InlineVolumeSpec *PersistentVolumeSpec `field:"optional" json:"inlineVolumeSpec" yaml:"inlineVolumeSpec"`
-	// Name of the persistent volume to attach.
+	// persistentVolumeName represents the name of the persistent volume to attach.
 	PersistentVolumeName *string `field:"optional" json:"persistentVolumeName" yaml:"persistentVolumeName"`
 }
 

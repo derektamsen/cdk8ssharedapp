@@ -12,7 +12,7 @@ type LeaseSpec struct {
 	HolderIdentity *string `field:"optional" json:"holderIdentity" yaml:"holderIdentity"`
 	// leaseDurationSeconds is a duration that candidates for a lease need to wait to force acquire it.
 	//
-	// This is measure against time of last observed RenewTime.
+	// This is measure against time of last observed renewTime.
 	LeaseDurationSeconds *float64 `field:"optional" json:"leaseDurationSeconds" yaml:"leaseDurationSeconds"`
 	// leaseTransitions is the number of transitions of a lease between holders.
 	LeaseTransitions *float64 `field:"optional" json:"leaseTransitions" yaml:"leaseTransitions"`

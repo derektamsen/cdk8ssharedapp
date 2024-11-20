@@ -5,7 +5,7 @@ package k8s
 //
 // The value can be any valid integer.
 type KubePriorityClassProps struct {
-	// The value of this priority class.
+	// value represents the integer value of this priority class.
 	//
 	// This is the actual priority that pods receive when they have the name of this class in their pod spec.
 	Value *float64 `field:"required" json:"value" yaml:"value"`
@@ -19,7 +19,7 @@ type KubePriorityClassProps struct {
 	//
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	Metadata *ObjectMeta `field:"optional" json:"metadata" yaml:"metadata"`
-	// PreemptionPolicy is the Policy for preempting pods with lower priority.
+	// preemptionPolicy is the Policy for preempting pods with lower priority.
 	//
 	// One of Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset.
 	// Default: PreemptLowerPriority if unset.

@@ -7,7 +7,7 @@ package k8s
 type KubeClusterRoleBindingProps struct {
 	// RoleRef can only reference a ClusterRole in the global namespace.
 	//
-	// If the RoleRef cannot be resolved, the Authorizer must return an error.
+	// If the RoleRef cannot be resolved, the Authorizer must return an error. This field is immutable.
 	RoleRef *RoleRef `field:"required" json:"roleRef" yaml:"roleRef"`
 	// Standard object's metadata.
 	Metadata *ObjectMeta `field:"optional" json:"metadata" yaml:"metadata"`

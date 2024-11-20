@@ -5,7 +5,7 @@ package k8s
 type NodeSpec struct {
 	// Deprecated: Previously used to specify the source of the node's configuration for the DynamicKubeletConfig feature.
 	//
-	// This feature is removed from Kubelets as of 1.24 and will be fully removed in 1.26.
+	// This feature is removed.
 	ConfigSource *NodeConfigSource `field:"optional" json:"configSource" yaml:"configSource"`
 	// Deprecated.
 	//

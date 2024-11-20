@@ -36,8 +36,6 @@ type PodSpec struct {
 	// Ephemeral containers may be run in an existing pod to perform user-initiated actions such as debugging. This list cannot be specified when creating a pod, and it cannot be modified by updating the pod spec. In order to add an ephemeral container to an existing pod, use the pod's ephemeralcontainers subresource.
 	EphemeralContainers *[]*EphemeralContainer `field:"optional" json:"ephemeralContainers" yaml:"ephemeralContainers"`
 	// HostAliases is an optional list of hosts and IPs that will be injected into the pod's hosts file if specified.
-	//
-	// This is only valid for non-hostNetwork pods.
 	HostAliases *[]*HostAlias `field:"optional" json:"hostAliases" yaml:"hostAliases"`
 	// Use the host's ipc namespace.
 	//
@@ -87,7 +85,7 @@ type PodSpec struct {
 	//
 	// If the OS field is set to linux, the following fields must be unset: -securityContext.windowsOptions
 	//
-	// If the OS field is set to windows, following fields must be unset: - spec.hostPID - spec.hostIPC - spec.hostUsers - spec.securityContext.seLinuxOptions - spec.securityContext.seccompProfile - spec.securityContext.fsGroup - spec.securityContext.fsGroupChangePolicy - spec.securityContext.sysctls - spec.shareProcessNamespace - spec.securityContext.runAsUser - spec.securityContext.runAsGroup - spec.securityContext.supplementalGroups - spec.containers[*].securityContext.seLinuxOptions - spec.containers[*].securityContext.seccompProfile - spec.containers[*].securityContext.capabilities - spec.containers[*].securityContext.readOnlyRootFilesystem - spec.containers[*].securityContext.privileged - spec.containers[*].securityContext.allowPrivilegeEscalation - spec.containers[*].securityContext.procMount - spec.containers[*].securityContext.runAsUser - spec.containers[*].securityContext.runAsGroup
+	// If the OS field is set to windows, following fields must be unset: - spec.hostPID - spec.hostIPC - spec.hostUsers - spec.securityContext.appArmorProfile - spec.securityContext.seLinuxOptions - spec.securityContext.seccompProfile - spec.securityContext.fsGroup - spec.securityContext.fsGroupChangePolicy - spec.securityContext.sysctls - spec.shareProcessNamespace - spec.securityContext.runAsUser - spec.securityContext.runAsGroup - spec.securityContext.supplementalGroups - spec.containers[*].securityContext.appArmorProfile - spec.containers[*].securityContext.seLinuxOptions - spec.containers[*].securityContext.seccompProfile - spec.containers[*].securityContext.capabilities - spec.containers[*].securityContext.readOnlyRootFilesystem - spec.containers[*].securityContext.privileged - spec.containers[*].securityContext.allowPrivilegeEscalation - spec.containers[*].securityContext.procMount - spec.containers[*].securityContext.runAsUser - spec.containers[*].securityContext.runAsGroup
 	Os *PodOs `field:"optional" json:"os" yaml:"os"`
 	// Overhead represents the resource overhead associated with running a pod for a given RuntimeClass.
 	//
@@ -111,9 +109,17 @@ type PodSpec struct {
 	//
 	// A pod is ready when all its containers are ready AND all conditions specified in the readiness gates have status equal to "True" More info: https://git.k8s.io/enhancements/keps/sig-network/580-pod-readiness-gates
 	ReadinessGates *[]*PodReadinessGate `field:"optional" json:"readinessGates" yaml:"readinessGates"`
+	// ResourceClaims defines which ResourceClaims must be allocated and reserved before the Pod is allowed to start.
+	//
+	// The resources will be made available to those containers which consume them by name.
+	//
+	// This is an alpha field and requires enabling the DynamicResourceAllocation feature gate.
+	//
+	// This field is immutable.
+	ResourceClaims *[]*PodResourceClaim `field:"optional" json:"resourceClaims" yaml:"resourceClaims"`
 	// Restart policy for all containers within the pod.
 	//
-	// One of Always, OnFailure, Never. Default to Always. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy
+	// One of Always, OnFailure, Never. In some contexts, only a subset of those values may be permitted. Default to Always. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy
 	// Default: Always. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy
 	//
 	RestartPolicy *string `field:"optional" json:"restartPolicy" yaml:"restartPolicy"`
@@ -123,13 +129,19 @@ type PodSpec struct {
 	//
 	// If not specified, the pod will be dispatched by default scheduler.
 	SchedulerName *string `field:"optional" json:"schedulerName" yaml:"schedulerName"`
+	// SchedulingGates is an opaque list of values that if specified will block scheduling the pod.
+	//
+	// If schedulingGates is not empty, the pod will stay in the SchedulingGated state and the scheduler will not attempt to schedule the pod.
+	//
+	// SchedulingGates can only be set at pod creation time, and be removed only afterwards.
+	SchedulingGates *[]*PodSchedulingGate `field:"optional" json:"schedulingGates" yaml:"schedulingGates"`
 	// SecurityContext holds pod-level security attributes and common container settings.
 	//
 	// Optional: Defaults to empty.  See type description for default values of each field.
 	// Default: empty.  See type description for default values of each field.
 	//
 	SecurityContext *PodSecurityContext `field:"optional" json:"securityContext" yaml:"securityContext"`
-	// DeprecatedServiceAccount is a depreciated alias for ServiceAccountName.
+	// DeprecatedServiceAccount is a deprecated alias for ServiceAccountName.
 	//
 	// Deprecated: Use serviceAccountName instead.
 	ServiceAccount *string `field:"optional" json:"serviceAccount" yaml:"serviceAccount"`

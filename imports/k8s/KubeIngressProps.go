@@ -9,7 +9,7 @@ type KubeIngressProps struct {
 	//
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	Metadata *ObjectMeta `field:"optional" json:"metadata" yaml:"metadata"`
-	// Spec is the desired state of the Ingress.
+	// spec is the desired state of the Ingress.
 	//
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 	Spec *IngressSpec `field:"optional" json:"spec" yaml:"spec"`

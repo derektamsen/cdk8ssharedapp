@@ -7,7 +7,7 @@ type KubeScaleProps struct {
 	//
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.
 	Metadata *ObjectMeta `field:"optional" json:"metadata" yaml:"metadata"`
-	// defines the behavior of the scale.
+	// spec defines the behavior of the scale.
 	//
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.
 	Spec *ScaleSpec `field:"optional" json:"spec" yaml:"spec"`

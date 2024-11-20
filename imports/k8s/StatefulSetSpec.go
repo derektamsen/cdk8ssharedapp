@@ -13,7 +13,7 @@ type StatefulSetSpec struct {
 	ServiceName *string `field:"required" json:"serviceName" yaml:"serviceName"`
 	// template is the object that describes the pod that will be created if insufficient replicas are detected.
 	//
-	// Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.
+	// Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet. Each pod will be named with the format <statefulsetname>-<podindex>. For example, a pod in a StatefulSet named "web" with index number "3" would be named "web-3". The only allowed template.spec.restartPolicy value is "Always".
 	Template *PodTemplateSpec `field:"required" json:"template" yaml:"template"`
 	// Minimum number of seconds for which a newly created pod should be ready without any of its container crashing for it to be considered available.
 	//
@@ -21,6 +21,10 @@ type StatefulSetSpec struct {
 	// Default: 0 (pod will be considered available as soon as it is ready).
 	//
 	MinReadySeconds *float64 `field:"optional" json:"minReadySeconds" yaml:"minReadySeconds"`
+	// ordinals controls the numbering of replica indices in a StatefulSet.
+	//
+	// The default ordinals behavior assigns a "0" index to the first replica and increments the index by one for each additional replica requested. Using the ordinals field requires the StatefulSetStartOrdinal feature gate to be enabled, which is beta.
+	Ordinals *StatefulSetOrdinals `field:"optional" json:"ordinals" yaml:"ordinals"`
 	// persistentVolumeClaimRetentionPolicy describes the lifecycle of persistent volume claims created from volumeClaimTemplates.
 	//
 	// By default, all persistent volume claims are created as needed and retained until manually deleted. This policy allows the lifecycle to be altered, for example by deleting persistent volume claims when their stateful set is deleted, or when their pod is scaled down. This requires the StatefulSetAutoDeletePVC feature gate to be enabled, which is alpha.  +optional

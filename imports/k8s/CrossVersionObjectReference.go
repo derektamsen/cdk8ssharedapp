@@ -3,15 +3,15 @@ package k8s
 
 // CrossVersionObjectReference contains enough information to let you identify the referred resource.
 type CrossVersionObjectReference struct {
-	// Kind of the referent;
+	// kind is the kind of the referent;
 	//
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	Kind *string `field:"required" json:"kind" yaml:"kind"`
-	// Name of the referent;
+	// name is the name of the referent;
 	//
-	// More info: http://kubernetes.io/docs/user-guide/identifiers#names
+	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 	Name *string `field:"required" json:"name" yaml:"name"`
-	// API version of the referent.
+	// apiVersion is the API version of the referent.
 	ApiVersion *string `field:"optional" json:"apiVersion" yaml:"apiVersion"`
 }
 

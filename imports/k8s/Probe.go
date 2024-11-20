@@ -12,8 +12,6 @@ type Probe struct {
 	//
 	FailureThreshold *float64 `field:"optional" json:"failureThreshold" yaml:"failureThreshold"`
 	// GRPC specifies an action involving a GRPC port.
-	//
-	// This is a beta field and requires enabling GRPCContainerProbe feature gate.
 	Grpc *GrpcAction `field:"optional" json:"grpc" yaml:"grpc"`
 	// HTTPGet specifies the http request to perform.
 	HttpGet *HttpGetAction `field:"optional" json:"httpGet" yaml:"httpGet"`

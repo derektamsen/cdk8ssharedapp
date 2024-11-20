@@ -8,7 +8,17 @@ type PodAffinityTerm struct {
 	// Empty topologyKey is not allowed.
 	TopologyKey *string `field:"required" json:"topologyKey" yaml:"topologyKey"`
 	// A label query over a set of resources, in this case pods.
+	//
+	// If it's null, this PodAffinityTerm matches with no Pods.
 	LabelSelector *LabelSelector `field:"optional" json:"labelSelector" yaml:"labelSelector"`
+	// MatchLabelKeys is a set of pod label keys to select which pods will be taken into consideration.
+	//
+	// The keys are used to lookup values from the incoming pod labels, those key-value labels are merged with `labelSelector` as `key in (value)` to select the group of existing pods which pods will be taken into consideration for the incoming pod's pod (anti) affinity. Keys that don't exist in the incoming pod labels will be ignored. The default value is empty. The same key is forbidden to exist in both matchLabelKeys and labelSelector. Also, matchLabelKeys cannot be set when labelSelector isn't set. This is an alpha field and requires enabling MatchLabelKeysInPodAffinity feature gate.
+	MatchLabelKeys *[]*string `field:"optional" json:"matchLabelKeys" yaml:"matchLabelKeys"`
+	// MismatchLabelKeys is a set of pod label keys to select which pods will be taken into consideration.
+	//
+	// The keys are used to lookup values from the incoming pod labels, those key-value labels are merged with `labelSelector` as `key notin (value)` to select the group of existing pods which pods will be taken into consideration for the incoming pod's pod (anti) affinity. Keys that don't exist in the incoming pod labels will be ignored. The default value is empty. The same key is forbidden to exist in both mismatchLabelKeys and labelSelector. Also, mismatchLabelKeys cannot be set when labelSelector isn't set. This is an alpha field and requires enabling MatchLabelKeysInPodAffinity feature gate.
+	MismatchLabelKeys *[]*string `field:"optional" json:"mismatchLabelKeys" yaml:"mismatchLabelKeys"`
 	// namespaces specifies a static list of namespace names that the term applies to.
 	//
 	// The term is applied to the union of the namespaces listed in this field and the ones selected by namespaceSelector. null or empty namespaces list and null namespaceSelector means "this pod's namespace".

@@ -7,6 +7,8 @@ package k8s
 type KubeCsiNodeProps struct {
 	// spec is the specification of CSINode.
 	Spec *CsiNodeSpec `field:"required" json:"spec" yaml:"spec"`
+	// Standard object's metadata.
+	//
 	// metadata.name must be the Kubernetes node name.
 	Metadata *ObjectMeta `field:"optional" json:"metadata" yaml:"metadata"`
 }

@@ -5,7 +5,7 @@ package k8s
 //
 // VolumeAttachment objects are non-namespaced.
 type KubeVolumeAttachmentProps struct {
-	// Specification of the desired attach/detach volume behavior.
+	// spec represents specification of the desired attach/detach volume behavior.
 	//
 	// Populated by the Kubernetes system.
 	Spec *VolumeAttachmentSpec `field:"required" json:"spec" yaml:"spec"`

@@ -45,10 +45,16 @@ type EphemeralContainer struct {
 	Ports *[]*ContainerPort `field:"optional" json:"ports" yaml:"ports"`
 	// Probes are not allowed for ephemeral containers.
 	ReadinessProbe *Probe `field:"optional" json:"readinessProbe" yaml:"readinessProbe"`
+	// Resources resize policy for the container.
+	ResizePolicy *[]*ContainerResizePolicy `field:"optional" json:"resizePolicy" yaml:"resizePolicy"`
 	// Resources are not allowed for ephemeral containers.
 	//
 	// Ephemeral containers use spare resources already allocated to the pod.
 	Resources *ResourceRequirements `field:"optional" json:"resources" yaml:"resources"`
+	// Restart policy for the container to manage the restart behavior of each container within a pod.
+	//
+	// This may only be set for init containers. You cannot set this field on ephemeral containers.
+	RestartPolicy *string `field:"optional" json:"restartPolicy" yaml:"restartPolicy"`
 	// Optional: SecurityContext defines the security options the ephemeral container should be run with.
 	//
 	// If set, the fields of SecurityContext override the equivalent fields of PodSecurityContext.

@@ -9,6 +9,8 @@ type LifecycleHandler struct {
 	Exec *ExecAction `field:"optional" json:"exec" yaml:"exec"`
 	// HTTPGet specifies the http request to perform.
 	HttpGet *HttpGetAction `field:"optional" json:"httpGet" yaml:"httpGet"`
+	// Sleep represents the duration that the container should sleep before being terminated.
+	Sleep *SleepAction `field:"optional" json:"sleep" yaml:"sleep"`
 	// Deprecated.
 	//
 	// TCPSocket is NOT supported as a LifecycleHandler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified.

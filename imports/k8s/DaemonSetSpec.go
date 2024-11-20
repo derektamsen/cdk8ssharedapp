@@ -9,7 +9,7 @@ type DaemonSetSpec struct {
 	Selector *LabelSelector `field:"required" json:"selector" yaml:"selector"`
 	// An object that describes the pod that will be created.
 	//
-	// The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
+	// The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). The only allowed template.spec.restartPolicy value is "Always". More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
 	Template *PodTemplateSpec `field:"required" json:"template" yaml:"template"`
 	// The minimum number of seconds for which a newly created DaemonSet pod should be ready without any of its container crashing, for it to be considered available.
 	//

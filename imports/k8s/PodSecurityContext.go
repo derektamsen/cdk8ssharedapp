@@ -5,6 +5,10 @@ package k8s
 //
 // Some fields are also present in container.securityContext.  Field values of container.securityContext take precedence over field values of PodSecurityContext.
 type PodSecurityContext struct {
+	// appArmorProfile is the AppArmor options to use by the containers in this pod.
+	//
+	// Note that this field cannot be set when spec.os.name is windows.
+	AppArmorProfile *AppArmorProfile `field:"optional" json:"appArmorProfile" yaml:"appArmorProfile"`
 	// A special supplemental group that applies to all containers in a pod.
 	//
 	// Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod:
@@ -39,9 +43,9 @@ type PodSecurityContext struct {
 	//
 	// If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows.
 	SeLinuxOptions *SeLinuxOptions `field:"optional" json:"seLinuxOptions" yaml:"seLinuxOptions"`
-	// A list of groups applied to the first process run in each container, in addition to the container's primary GID.
+	// A list of groups applied to the first process run in each container, in addition to the container's primary GID, the fsGroup (if specified), and group memberships defined in the container image for the uid of the container process.
 	//
-	// If unspecified, no groups will be added to any container. Note that this field cannot be set when spec.os.name is windows.
+	// If unspecified, no additional groups are added to any container. Note that group memberships defined in the container image for the uid of the container process are still effective, even if they are not included in this list. Note that this field cannot be set when spec.os.name is windows.
 	SupplementalGroups *[]*float64 `field:"optional" json:"supplementalGroups" yaml:"supplementalGroups"`
 	// Sysctls hold a list of namespaced sysctls used for the pod.
 	//

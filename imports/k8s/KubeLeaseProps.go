@@ -5,7 +5,7 @@ package k8s
 type KubeLeaseProps struct {
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.
 	Metadata *ObjectMeta `field:"optional" json:"metadata" yaml:"metadata"`
-	// Specification of the Lease.
+	// spec contains the specification of the Lease.
 	//
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 	Spec *LeaseSpec `field:"optional" json:"spec" yaml:"spec"`

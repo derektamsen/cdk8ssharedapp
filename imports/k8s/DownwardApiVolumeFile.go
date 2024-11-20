@@ -7,7 +7,7 @@ type DownwardApiVolumeFile struct {
 	//
 	// Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
 	Path *string `field:"required" json:"path" yaml:"path"`
-	// Required: Selects a field of the pod: only annotations, labels, name and namespace are supported.
+	// Required: Selects a field of the pod: only annotations, labels, name, namespace and uid are supported.
 	FieldRef *ObjectFieldSelector `field:"optional" json:"fieldRef" yaml:"fieldRef"`
 	// Optional: mode bits used to set permissions on this file, must be an octal value between 0000 and 0777 or a decimal value between 0 and 511.
 	//

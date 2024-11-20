@@ -3,7 +3,7 @@ package k8s
 
 // IngressList is a collection of Ingress.
 type KubeIngressListProps struct {
-	// Items is the list of Ingress.
+	// items is the list of Ingress.
 	Items *[]*KubeIngressProps `field:"required" json:"items" yaml:"items"`
 	// Standard object's metadata.
 	//

@@ -3,7 +3,7 @@ package k8s
 
 // RuntimeClassList is a list of RuntimeClass objects.
 type KubeRuntimeClassListProps struct {
-	// Items is a list of schema objects.
+	// items is a list of schema objects.
 	Items *[]*KubeRuntimeClassProps `field:"required" json:"items" yaml:"items"`
 	// Standard list metadata.
 	//

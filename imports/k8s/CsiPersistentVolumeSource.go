@@ -13,7 +13,7 @@ type CsiPersistentVolumeSource struct {
 	VolumeHandle *string `field:"required" json:"volumeHandle" yaml:"volumeHandle"`
 	// controllerExpandSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI ControllerExpandVolume call.
 	//
-	// This is an beta field and requires enabling ExpandCSIVolumes feature gate. This field is optional, and may be empty if no secret is required. If the secret object contains more than one secret, all secrets are passed.
+	// This field is optional, and may be empty if no secret is required. If the secret object contains more than one secret, all secrets are passed.
 	ControllerExpandSecretRef *SecretReference `field:"optional" json:"controllerExpandSecretRef" yaml:"controllerExpandSecretRef"`
 	// controllerPublishSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI ControllerPublishVolume and ControllerUnpublishVolume calls.
 	//
@@ -25,7 +25,7 @@ type CsiPersistentVolumeSource struct {
 	FsType *string `field:"optional" json:"fsType" yaml:"fsType"`
 	// nodeExpandSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI NodeExpandVolume call.
 	//
-	// This is an alpha field and requires enabling CSINodeExpandSecret feature gate. This field is optional, may be omitted if no secret is required. If the secret object contains more than one secret, all secrets are passed.
+	// This field is optional, may be omitted if no secret is required. If the secret object contains more than one secret, all secrets are passed.
 	NodeExpandSecretRef *SecretReference `field:"optional" json:"nodeExpandSecretRef" yaml:"nodeExpandSecretRef"`
 	// nodePublishSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI NodePublishVolume and NodeUnpublishVolume calls.
 	//

@@ -51,7 +51,7 @@ type ServiceSpec struct {
 	LoadBalancerClass *string `field:"optional" json:"loadBalancerClass" yaml:"loadBalancerClass"`
 	// Only applies to Service Type: LoadBalancer.
 	//
-	// This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature. Deprecated: This field was under-specified and its meaning varies across implementations, and it cannot support dual-stack. As of Kubernetes v1.24, users are encouraged to use implementation-specific annotations when available. This field may be removed in a future API version.
+	// This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature. Deprecated: This field was under-specified and its meaning varies across implementations. Using it is non-portable and it may not support dual-stack. Users are encouraged to use implementation-specific annotations when available.
 	LoadBalancerIp *string `field:"optional" json:"loadBalancerIp" yaml:"loadBalancerIp"`
 	// If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs.
 	//
@@ -77,6 +77,10 @@ type ServiceSpec struct {
 	SessionAffinity *string `field:"optional" json:"sessionAffinity" yaml:"sessionAffinity"`
 	// sessionAffinityConfig contains the configurations of session affinity.
 	SessionAffinityConfig *SessionAffinityConfig `field:"optional" json:"sessionAffinityConfig" yaml:"sessionAffinityConfig"`
+	// TrafficDistribution offers a way to express preferences for how traffic is distributed to Service endpoints.
+	//
+	// Implementations can use this field as a hint, but are not required to guarantee strict adherence. If the field is not set, the implementation will apply its default routing strategy. If set to "PreferClose", implementations should prioritize endpoints that are topologically close (e.g., same zone).
+	TrafficDistribution *string `field:"optional" json:"trafficDistribution" yaml:"trafficDistribution"`
 	// type determines how the Service is exposed.
 	//
 	// Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ClusterIP" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object or EndpointSlice objects. If clusterIP is "None", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a virtual IP. "NodePort" builds on ClusterIP and allocates a port on every node which routes to the same endpoints as the clusterIP. "LoadBalancer" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP. "ExternalName" aliases this service to the specified externalName. Several other fields do not apply to ExternalName services. More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types

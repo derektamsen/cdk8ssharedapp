@@ -21,7 +21,7 @@ type CustomResourceDefinitionSpec struct {
 	Conversion *CustomResourceConversion `field:"optional" json:"conversion" yaml:"conversion"`
 	// preserveUnknownFields indicates that object fields which are not specified in the OpenAPI schema should be preserved when persisting to storage.
 	//
-	// apiVersion, kind, metadata and known fields inside metadata are always preserved. This field is deprecated in favor of setting `x-preserve-unknown-fields` to true in `spec.versions[*].schema.openAPIV3Schema`. See https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#pruning-versus-preserving-unknown-fields for details.
+	// apiVersion, kind, metadata and known fields inside metadata are always preserved. This field is deprecated in favor of setting `x-preserve-unknown-fields` to true in `spec.versions[*].schema.openAPIV3Schema`. See https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#field-pruning for details.
 	PreserveUnknownFields *bool `field:"optional" json:"preserveUnknownFields" yaml:"preserveUnknownFields"`
 }
 

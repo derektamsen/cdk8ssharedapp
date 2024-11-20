@@ -27,6 +27,10 @@ type CustomResourceDefinitionVersion struct {
 	DeprecationWarning *string `field:"optional" json:"deprecationWarning" yaml:"deprecationWarning"`
 	// schema describes the schema used for validation, pruning, and defaulting of this version of the custom resource.
 	Schema *CustomResourceValidation `field:"optional" json:"schema" yaml:"schema"`
+	// selectableFields specifies paths to fields that may be used as field selectors.
+	//
+	// A maximum of 8 selectable fields are allowed. See https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors
+	SelectableFields *[]*SelectableField `field:"optional" json:"selectableFields" yaml:"selectableFields"`
 	// subresources specify what subresources this version of the defined custom resource have.
 	Subresources *CustomResourceSubresources `field:"optional" json:"subresources" yaml:"subresources"`
 }

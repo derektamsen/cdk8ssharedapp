@@ -9,6 +9,10 @@ type SecurityContext struct {
 	//
 	// This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN Note that this field cannot be set when spec.os.name is windows.
 	AllowPrivilegeEscalation *bool `field:"optional" json:"allowPrivilegeEscalation" yaml:"allowPrivilegeEscalation"`
+	// appArmorProfile is the AppArmor options to use by this container.
+	//
+	// If set, this profile overrides the pod's appArmorProfile. Note that this field cannot be set when spec.os.name is windows.
+	AppArmorProfile *AppArmorProfile `field:"optional" json:"appArmorProfile" yaml:"appArmorProfile"`
 	// The capabilities to add/drop when running containers.
 	//
 	// Defaults to the default set of capabilities granted by the container runtime. Note that this field cannot be set when spec.os.name is windows.
