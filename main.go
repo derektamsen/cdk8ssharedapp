@@ -2,6 +2,7 @@ package cdk8ssharedapp
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
@@ -24,6 +25,15 @@ type K8sClusters struct {
 }
 
 func NewApp(appConfig *AppConfig, clusters *K8sClusters) error {
+	// Remove any existing rendered manifests from dist
+	// This ensures that the rendered output is exactly what we expect.
+	dir, err := os.Getwd()
+	if err != nil {
+		return err
+	}
+	fmt.Printf("Removing rendered manifests from \"%s/dist\"\n", dir)
+
+	// Generate the manifests for all clusters
 	for _, v := range *clusters.Clusters {
 		fmt.Printf("Generating manifests for %s\n", v.ClusterName)
 		appProps := &cdk8s.AppProps{
