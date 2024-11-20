@@ -31,7 +31,13 @@ func NewApp(appConfig *AppConfig, clusters *K8sClusters) error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("Removing rendered manifests from \"%s/dist\"\n", dir)
+
+	rendered_dir := fmt.Sprintf("%s/dist", dir)
+	fmt.Printf("Removing rendered manifests from \"%s\"\n", rendered_dir)
+	err = os.RemoveAll(rendered_dir)
+	if err != nil {
+		return err
+	}
 
 	// Generate the manifests for all clusters
 	for _, v := range *clusters.Clusters {
