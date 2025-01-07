@@ -7,7 +7,7 @@ toolchain go1.23.2
 require (
 	github.com/aws/constructs-go/constructs/v10 v10.4.2
 	github.com/aws/jsii-runtime-go v1.106.0
-	github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.69.28
+	github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.69.31
 )
 
 require (
