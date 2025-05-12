@@ -1,11 +1,12 @@
 module github.com/derektamsen/cdk8ssharedapp
 
-go 1.22.0
+go 1.23.0
+
 toolchain go1.24.1
 
 require (
 	github.com/aws/constructs-go/constructs/v10 v10.4.2
-	github.com/aws/jsii-runtime-go v1.111.0
+	github.com/aws/jsii-runtime-go v1.112.0
 	github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.69.66
 )
 
@@ -17,7 +18,7 @@ require (
 	github.com/yuin/goldmark v1.7.8 // indirect
 	golang.org/x/lint v0.0.0-20241112194109-818c5a804067 // indirect
 	golang.org/x/mod v0.24.0 // indirect
-	golang.org/x/sync v0.12.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
-	golang.org/x/tools v0.31.0 // indirect
+	golang.org/x/sync v0.14.0 // indirect
+	golang.org/x/sys v0.33.0 // indirect
+	golang.org/x/tools v0.33.0 // indirect
 )
