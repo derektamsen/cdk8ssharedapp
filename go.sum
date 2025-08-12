@@ -4,8 +4,8 @@ github.com/aws/constructs-go/constructs/v10 v10.4.2 h1:+hDLTsFGLJmKIn0Dg20vWpKBr
 github.com/aws/constructs-go/constructs/v10 v10.4.2/go.mod h1:cXsNCKDV+9eR9zYYfwy6QuE4uPFp6jsq6TtH1MwBx9w=
 github.com/aws/jsii-runtime-go v1.113.0 h1:3vJsPVgpQHYTHglndkS26X60wrybc9jgsvU14s7IGGw=
 github.com/aws/jsii-runtime-go v1.113.0/go.mod h1:t5MrjZLtD4qFs1TUxPykOgZQKvCBxdN3VqpCkrElCNA=
-github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.4 h1:czoUY2eQ3R9wxZROsXaaBmpkVW2SreXHhWCEIuWGE9c=
-github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.4/go.mod h1:JFGcyqRE2qXgHsBw27/L0D1uEJtLhUm2Vqx4dFOHSzA=
+github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.7 h1:WzxNwfJXjsbzR0gfCBKmtQgUKd6GiXy/lUbrK8q60iE=
+github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.7/go.mod h1:mjrzkJcmkgQfHaSayvfPIFehelPsW9yhSeXEOgOtSdE=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/color v1.18.0 h1:S8gINlzdQ840/4pfAwic/ZE0djQEH3wM94VfqLTZcOM=
