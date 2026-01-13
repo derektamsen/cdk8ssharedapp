@@ -6,7 +6,7 @@ toolchain go1.24.1
 
 require (
 	github.com/aws/constructs-go/constructs/v10 v10.4.4
-	github.com/aws/jsii-runtime-go v1.122.0
+	github.com/aws/jsii-runtime-go v1.125.0
 	github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.38
 )
 
