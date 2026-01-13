@@ -2,10 +2,10 @@ github.com/Masterminds/semver/v3 v3.4.0 h1:Zog+i5UMtVoCU8oKka5P7i9q9HgrJeGzI9SA1
 github.com/Masterminds/semver/v3 v3.4.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/aws/constructs-go/constructs/v10 v10.4.4 h1:LL7cFqtg3B4t0ut2shtGxxeubEc+uXY5DDoWoRBuLCs=
 github.com/aws/constructs-go/constructs/v10 v10.4.4/go.mod h1:BhiNi267cuLnCZpYK59k68wKYh5G5AF0SoVA8f4iyGo=
-github.com/aws/jsii-runtime-go v1.122.0 h1:YfdrW9lIAvdceO5plYO9koVp1lvLSVjENiikfIrjmJo=
-github.com/aws/jsii-runtime-go v1.122.0/go.mod h1:67f+oydH0cMr//tkmNNj9QpKk02hNEEVu4CByxkpGB0=
-github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.38 h1:E/Xq2dLtFNkPyi69lEvusZrF7YUC/GtqvwsaZN/rYok=
-github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.38/go.mod h1:zARxui5zT0XEgZh/zb4bRKyEcLZmtx2e6mcJO8tUMH8=
+github.com/aws/jsii-runtime-go v1.125.0 h1:s5gM2ATWcCPQS61G5WHZZiqjUqejZFjed702OBrr4yo=
+github.com/aws/jsii-runtime-go v1.125.0/go.mod h1:67f+oydH0cMr//tkmNNj9QpKk02hNEEVu4CByxkpGB0=
+github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.42 h1:hIXN3jbDZUh9FcAqdt+d+U2Js+5FUccPJ3yM3zEJGW4=
+github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.42/go.mod h1:EFJBjnpan2BTZ36fIJULY05oud6cEwZEDCcM55OBpDQ=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/color v1.18.0 h1:S8gINlzdQ840/4pfAwic/ZE0djQEH3wM94VfqLTZcOM=
