@@ -2,8 +2,8 @@ github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAw
 github.com/Masterminds/semver/v3 v3.5.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/aws/constructs-go/constructs/v10 v10.6.0 h1:fYUtscoB7dhGXBFuO1o6qvgYzkKUV2rMQna/n3O7Y/4=
 github.com/aws/constructs-go/constructs/v10 v10.6.0/go.mod h1:/OFJ5HMGSjXyjQ4mNz32+XGA7S0S3ZWDXYtBSAuurEE=
-github.com/aws/jsii-runtime-go v1.136.0 h1:lAfz+1wHmFXm0vLFpU4ADAa44F1LZgPrWvH7YADcocM=
-github.com/aws/jsii-runtime-go v1.136.0/go.mod h1:OYE8SfZih4Pp+YNdNTIeqNiSQXy4kTkU/Fb2Jf7zDC4=
+github.com/aws/jsii-runtime-go v1.137.0 h1:w+0f7iUveErqcuv1/ZmyDYXVkqwqxEoiUrxrHqn0lLY=
+github.com/aws/jsii-runtime-go v1.137.0/go.mod h1:OYE8SfZih4Pp+YNdNTIeqNiSQXy4kTkU/Fb2Jf7zDC4=
 github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.79 h1:kgNDy5AybWgJ0fOv8D80/792JEt38TslTFJrJRaHtXE=
 github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2 v2.70.79/go.mod h1:zos7Du3BzwG5gW529O7HgoStxzHFAsiCUlkss+faav4=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
